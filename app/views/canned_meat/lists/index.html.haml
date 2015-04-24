@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    %h2=t 'canned_meat.views.lists.index.headline'
+
+    %table
+      %thead
+        %tr
+          %th= CannedMeat::List.human_attribute_name('name')
+          %th=t 'canned_meat.views.defaults.actions'
+      %tbody
+        - @lists.each do |list|
+          %tr
+            %td= list.name
+            %td
+              = link_to t('canned_meat.views.defaults.buttons.show'), list, class: 'btn btn-default btn-sm'
+              = link_to t('canned_meat.views.defaults.buttons.edit'), canned_meat.edit_list_path(list), class: 'btn btn-default btn-sm'
+              = link_to t('canned_meat.views.defaults.buttons.destroy'), list, method: :delete, data: {confirm: t('canned_meat.views.defaults.confirmation')}, class: 'btn btn-warn btn-sm'

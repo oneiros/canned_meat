@@ -1,5 +1,7 @@
 RSpec.shared_examples_for "authenticated controller" do |method, action, args|
 
+  after(:example) { CannedMeat.configure_defaults! }
+
   describe "no authentication block given" do
 
     it "should be successful" do

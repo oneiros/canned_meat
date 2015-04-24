@@ -1,0 +1,23 @@
+en:
+  canned_meat:
+    controllers:
+      lists:
+        created: "List has been successfully created."
+        updated: "List has been updated successfully."
+        destroyed: "List has been deleted successfully."
+    views:
+      defaults:
+        actions: "Actions"
+        confirmation: "Are you sure?"
+        buttons:
+          show: "Show"
+          edit: "Edit"
+          destroy: "Delete"
+      lists:
+        index:
+          headline: "Lists"
+        new:
+          headline: "New List"
+        edit:
+          headline: "Edit List"
+

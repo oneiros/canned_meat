@@ -5,6 +5,5 @@ module CannedMeat
 
     def index
     end
-
   end
 end

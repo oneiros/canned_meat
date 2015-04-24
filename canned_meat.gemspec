@@ -25,4 +25,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails", "~> 3.2.1"
   s.add_development_dependency "factory_girl_rails", "~> 4.5.0"
   s.add_development_dependency "guard-rspec", "~> 4.5.0"
+  s.add_development_dependency "capybara", "~> 2.4.4"
 end
