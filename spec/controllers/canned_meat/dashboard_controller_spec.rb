@@ -4,6 +4,8 @@ module CannedMeat
   RSpec.describe DashboardController, type: :controller do
     routes { CannedMeat::Engine.routes }
 
+    it_behaves_like "authenticated controller", :get, :index
+
     describe "#index" do
 
       it "raises no errors" do
