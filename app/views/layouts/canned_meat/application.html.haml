@@ -1,0 +1,14 @@
+!!! 5
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    %title canned_meat - Newsletter Management 
+    = stylesheet_link_tag 'canned_meat/application', media: 'all'
+  %body
+    .container
+      = yield
+    = javascript_include_tag 'canned_meat/application'
