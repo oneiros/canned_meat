@@ -17,3 +17,5 @@ module CannedMeat
     self.return_path = :root_path
   end
 end
+
+CannedMeat.configure_defaults!
