@@ -5,6 +5,10 @@ en:
         created: "List has been successfully created."
         updated: "List has been updated successfully."
         destroyed: "List has been deleted successfully."
+      templates:
+        created: "Template has been successfully created."
+        updated: "Template has been updated successfully."
+        destroyed: "Template has been deleted successfully."
     views:
       defaults:
         actions: "Actions"
@@ -20,4 +24,10 @@ en:
           headline: "New List"
         edit:
           headline: "Edit List"
-
+      templates:
+        index:
+          headline: "Templates"
+        new:
+          headline: "New Template"
+        edit:
+          headline: "Edit Template"

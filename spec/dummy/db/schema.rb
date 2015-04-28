@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427144203) do
+ActiveRecord::Schema.define(version: 20150428123522) do
 
   create_table "canned_meat_lists", force: :cascade do |t|
     t.string   "name",       null: false
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20150427144203) do
 
   add_index "canned_meat_subscriptions", ["list_id"], name: "index_canned_meat_subscriptions_on_list_id"
   add_index "canned_meat_subscriptions", ["subscriber_type", "subscriber_id"], name: "index_canned_meat_subscriptions_on_subscriber_type_and_id"
+
+  create_table "canned_meat_templates", force: :cascade do |t|
+    t.string   "name"
+    t.text     "html"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "canned_meat_templates", ["name"], name: "index_canned_meat_templates_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

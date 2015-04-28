@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    %h2= @template.name
+    %p
+      %b= CannedMeat::Template.human_attribute_name(:html)
+      %br
+      %pre= @template.html
+    %P
+      %b= CannedMeat::Template.human_attribute_name(:text)
+      %br
+      %pre= @template.text
