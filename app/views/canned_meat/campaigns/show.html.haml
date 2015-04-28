@@ -1,0 +1,17 @@
+.row
+  .col-md-12
+    %h2
+      = @campaign.name
+      %small=t "views.campaigns.status.#{@campaign.status}"
+    %p
+      %b= CannedMeat::Campaign.human_attribute_name(:list_id)
+      = link_to @campaign.list.name, @campaign.list
+    %p
+      %b= CannedMeat::Campaign.human_attribute_name(:template_id)
+      = link_to @campaign.template.name, @campaign.template
+    %p
+      %b= CannedMeat::Campaign.human_attribute_name(:subject)
+      = @campaign.subject
+    %p
+      %b= CannedMeat::Campaign.human_attribute_name(:body)
+      %pre= @campaign.body

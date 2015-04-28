@@ -1,8 +1,8 @@
 module CannedMeat
   class List < ActiveRecord::Base
 
+    has_many :campaigns
     has_many :subscriptions
-    puts "setting has_many :through"
     has_many :subscribers,
       -> { where(canned_meat_subscriptions: {unsubscribed_at: nil}) },
       {through: :subscriptions, source_type: CannedMeat.subscriber_model}

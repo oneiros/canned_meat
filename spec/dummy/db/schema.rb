@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428123522) do
+ActiveRecord::Schema.define(version: 20150428142736) do
+
+  create_table "canned_meat_campaigns", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "list_id"
+    t.integer  "template_id"
+    t.string   "status",      default: "draft", null: false
+    t.string   "subject",                       null: false
+    t.text     "body"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "canned_meat_campaigns", ["list_id"], name: "index_canned_meat_campaigns_on_list_id"
+  add_index "canned_meat_campaigns", ["name"], name: "index_canned_meat_campaigns_on_name", unique: true
+  add_index "canned_meat_campaigns", ["template_id"], name: "index_canned_meat_campaigns_on_template_id"
 
   create_table "canned_meat_lists", force: :cascade do |t|
     t.string   "name",       null: false

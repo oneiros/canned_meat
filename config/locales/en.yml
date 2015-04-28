@@ -1,6 +1,10 @@
 en:
   canned_meat:
     controllers:
+      campaigns:
+        created: "Campaign has been successfully created."
+        updated: "Campaign has been updated successfully."
+        destroyed: "Campaign has been deleted successfully."
       lists:
         created: "List has been successfully created."
         updated: "List has been updated successfully."
@@ -17,6 +21,17 @@ en:
           show: "Show"
           edit: "Edit"
           destroy: "Delete"
+      campaigns:
+        status:
+          draft: "Draft"
+          sending: "Sending"
+          sent: "Sent"
+        index:
+          headline: "Campaigns"
+        new:
+          headline: "New Campaign"
+        edit:
+          headline: "Edit Campaign"
       lists:
         index:
           headline: "Lists"
