@@ -46,6 +46,13 @@ module CannedMeat
       redirect_to canned_meat.campaigns_path, notice: t('canned_meat.controllers.campaigns.destroyed')
     end
 
+    def send_campaign
+      @campaign = Campaign.find(params[:id])
+      @campaign.send!
+
+      redirect_to @campaign, notice: t('canned_meat.controllers.campaigns.sending')
+    end
+
     private
 
     def campaign_params

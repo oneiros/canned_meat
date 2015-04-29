@@ -1,3 +1,4 @@
+require "canned_meat/variable_replacer"
 require "canned_meat/engine"
 require "canned_meat/version"
 

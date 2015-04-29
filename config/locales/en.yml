@@ -5,6 +5,7 @@ en:
         created: "Campaign has been successfully created."
         updated: "Campaign has been updated successfully."
         destroyed: "Campaign has been deleted successfully."
+        sending: "Campaign is being sent out."
       lists:
         created: "List has been successfully created."
         updated: "List has been updated successfully."
@@ -32,6 +33,9 @@ en:
           headline: "New Campaign"
         edit:
           headline: "Edit Campaign"
+        show:
+          buttons:
+            send: "Send Campaign"
       lists:
         index:
           headline: "Lists"

@@ -18,5 +18,15 @@ module CannedMeat
 
     validates :body,
       presence: true
+
+    def draft?
+      status == 'draft'
+    end
+
+    def send!
+      raise "Campaign already sent" unless draft?
+      SendCampaignJob.perform_later(self)
+      update_attributes!(status: 'sending')
+    end
   end
 end
