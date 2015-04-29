@@ -9,7 +9,7 @@ RSpec.describe CannedMeat do
         CannedMeat.configure_defaults!
       end
 
-      [:authenticator, :subscriber_model, :email_method, :label_method, :return_path].each do |attribute|
+      [:authenticator, :subscriber_model, :email_method, :label_method, :return_path, :email_from].each do |attribute|
         it "should be possible to set #{attribute}" do
           CannedMeat.configure do |config|
             config.send(:"#{attribute}=", "test value")
