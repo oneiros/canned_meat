@@ -1,10 +1,10 @@
 module CannedMeat
   class CampaignMailer < ActionMailer::Base
 
-    def send_campaign
-      mail from: CannedMeat.email_from, to: "to@example.org" do |format|
-        format.html { render text: "<html></html>" }
-        format.text { render text: "test" }
+    def send_campaign(email, subject, html, text)
+      mail from: CannedMeat.email_from, to: email do |format|
+        format.html { render text: html }
+        format.text { render text: text }
       end
     end
   end
