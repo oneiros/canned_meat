@@ -7,6 +7,7 @@ module CannedMeat
       campaign.list.subscribers.each do |subscriber|
         CampaignMailer.send_campaign.deliver_now
       end
+      campaign.update_attributes!(status: 'sent')
     end
   end
 end
