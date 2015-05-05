@@ -54,8 +54,8 @@ module CannedMeat
             .with(
               "john@example.com",
               "campaign test subject",
-              "<html>John test content</html>",
-              "test content John"
+              "<html>John <p>test content</p>\n</html>",
+              "test content\n\n John"
             )
         end
       end

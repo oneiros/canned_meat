@@ -3,9 +3,12 @@ module CannedMeat
     queue_as :default
 
     def perform(campaign)
-      template_renderer = TemplateRenderer.new(campaign.template)
-      html_template = template_renderer.render_html(campaign.body)
-      text_template = template_renderer.render_text(campaign.body)
+      template_renderer = TemplateRenderer.new(
+        campaign.template,
+        campaign.body
+      )
+      html_template = template_renderer.render_html
+      text_template = template_renderer.render_text
 
       campaign.list.subscribers.each do |subscriber|
         html = VariableReplacer.new(html_template).replace(
