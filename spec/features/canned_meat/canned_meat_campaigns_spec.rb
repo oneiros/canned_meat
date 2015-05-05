@@ -35,13 +35,13 @@ module CannedMeat
           end
 
           describe "clicking the send button" do
-            before(:each) do
+            before(:example) do
               allow(CannedMeat::Campaign).to receive(:find).with(campaign.to_param).and_return(campaign)
               allow(campaign).to receive(:send!)
               click_link(button_text)
             end
 
-            it "should call the campaings send method" do
+            it "should call the campaigns send method" do
               expect(campaign).to have_received(:send!)
             end
           end
@@ -53,6 +53,49 @@ module CannedMeat
 
             it "should not show the send button" do
               expect(page).to_not have_content(button_text)
+            end
+          end
+        end
+      end
+
+      describe "sending out a test mail" do
+        let(:button_text) { I18n.t('canned_meat.views.campaigns.show.buttons.send_test_mail') }
+
+        describe "a campaign in draft status" do
+          let(:list) { create(:canned_meat_list, :with_3_users) }
+          let(:campaign) { create(:canned_meat_campaign, status: 'draft', list: list) }
+
+          it "should show the send test mail button" do
+            expect(page).to have_css("input[type=submit][value='#{button_text}']")
+          end
+
+          describe "clicking the send test mail button" do
+            let(:recipient) { list.subscribers[1] }
+
+            before(:example) do
+              ActionMailer::Base.deliveries.clear
+              select recipient.name, from: 'subscriber_id'
+              click_button(button_text)
+            end
+
+            it "should send one email" do
+              expect(ActionMailer::Base.deliveries.size).to eq 1
+            end
+
+            it "should send the mail to the chosen recipients email address" do
+              email = ActionMailer::Base.deliveries.last
+
+              expect(email.to).to eq [recipient.email]
+            end
+          end
+        end
+
+        %w(sending sent).each do |status|
+          describe "a campaign in #{status} status" do
+            let(:campaign) { create(:canned_meat_campaign, status: status) }
+
+            it "should not show the send test mail button" do
+              expect(page).to_not have_css("input[type=submit][value='#{button_text}']")
             end
           end
         end

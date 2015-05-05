@@ -53,6 +53,15 @@ module CannedMeat
       redirect_to @campaign, notice: t('canned_meat.controllers.campaigns.sending')
     end
 
+    def send_test_mail
+      campaign = Campaign.find(params[:id])
+      subscriber = campaign.list.subscribers.find(params[:subscriber_id])
+      CampaignSender.new(campaign).send_to subscriber
+
+      redirect_to campaign,
+        notice: t('canned_meat.controllers.campaigns.sent_test_mail', email: subscriber.send(CannedMeat.email_method))
+    end
+
     private
 
     def campaign_params

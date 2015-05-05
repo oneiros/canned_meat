@@ -6,6 +6,7 @@ en:
         updated: "Campaign has been updated successfully."
         destroyed: "Campaign has been deleted successfully."
         sending: "Campaign is being sent out."
+        sent_test_mail: "Sent a test mail to '%{email}'"
       lists:
         created: "List has been successfully created."
         updated: "List has been updated successfully."
@@ -34,8 +35,11 @@ en:
         edit:
           headline: "Edit Campaign"
         show:
+          labels:
+            subscriber_id: "Choose the recipient of the test email:"
           buttons:
             send: "Send Campaign"
+            send_test_mail: "Send Test Email"
       lists:
         index:
           headline: "Lists"
