@@ -6,5 +6,15 @@ module CannedMeat
     validates :name,
       presence: true
 
+    validates :html,
+      format: {
+        with: /{{content}}/
+      }
+
+    validates :text,
+      format: {
+        with: /{{content}}/
+      }
+
   end
 end

@@ -34,6 +34,8 @@ module CannedMeat
 
       it "should create a template when submitting valid values" do
         fill_in "Name", with: "Test Template"
+        fill_in "Html", with: "{{content}}"
+        fill_in "Text", with: "{{content}}"
 
         expect{
           click_button "Create Template"
