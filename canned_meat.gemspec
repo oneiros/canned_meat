@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.2.1"
   s.add_dependency "haml", "~> 4.0.6"
   s.add_dependency "sass-rails", "~> 5.0"
+  s.add_dependency "redcarpet", "~> 3.2.3"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.2.1"

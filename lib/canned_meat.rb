@@ -1,3 +1,4 @@
+require "canned_meat/redcarpet/text_renderer"
 require "canned_meat/variable_replacer"
 require "canned_meat/template_renderer"
 require "canned_meat/engine"
