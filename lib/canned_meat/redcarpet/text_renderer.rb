@@ -69,7 +69,7 @@ module CannedMeat
       end
 
       def paragraph(text)
-        word_wrap(text, line_width: 72)
+        "#{word_wrap(text, line_width: 72)}\n\n"
       end
 
       def table(header, body)

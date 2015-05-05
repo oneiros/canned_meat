@@ -4,11 +4,11 @@ module CannedMeat
   module Redcarpet
     RSpec.describe TextRenderer do
 
-      shared_examples_for "returns input unchanged" do |method|
+      shared_examples_for "returns input unchanged" do |method, postfix = nil|
         it "should return the input unchanged" do
           result = subject.send(method, "test")
 
-          expect(result).to eq "test"
+          expect(result).to eq "test#{postfix}"
         end
       end
 
@@ -144,14 +144,14 @@ module CannedMeat
       end
 
       describe "#paragraph" do
-        it_behaves_like "returns input unchanged", :paragraph
+        it_behaves_like "returns input unchanged", :paragraph, "\n\n"
 
         it "wraps long lines" do
           result = subject.paragraph(
             "At first I thought not using lorem ipsum here would allow me to be a little more funny. Turns out I am not funny at all."
           )
 
-          expect(result).to eq "At first I thought not using lorem ipsum here would allow me to be a\nlittle more funny. Turns out I am not funny at all."
+          expect(result).to eq "At first I thought not using lorem ipsum here would allow me to be a\nlittle more funny. Turns out I am not funny at all.\n\n"
         end
       end
 
