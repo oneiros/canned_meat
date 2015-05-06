@@ -1,8 +1,12 @@
 .row
   .col-md-12
-    %h2=t 'canned_meat.views.templates.index.headline'
-
-    %table
+    %h2
+      .pull-right
+        = link_to t('canned_meat.views.templates.index.new'), canned_meat.new_template_path, class: 'btn btn-primary'
+      =t 'canned_meat.views.templates.index.headline'
+.row
+  .col-md-12
+    %table.table.table-striped
       %thead
         %tr
           %th= CannedMeat::Template.human_attribute_name('name')
@@ -14,4 +18,4 @@
             %td
               = link_to t('canned_meat.views.defaults.buttons.show'), template, class: 'btn btn-default btn-sm'
               = link_to t('canned_meat.views.defaults.buttons.edit'), canned_meat.edit_template_path(template), class: 'btn btn-default btn-sm'
-              = link_to t('canned_meat.views.defaults.buttons.destroy'), template, method: :delete, data: {confirm: t('canned_meat.views.defaults.confirmation')}, class: 'btn btn-warn btn-sm'
+              = link_to t('canned_meat.views.defaults.buttons.destroy'), template, method: :delete, data: {confirm: t('canned_meat.views.defaults.confirmation')}, class: 'btn btn-danger btn-sm'

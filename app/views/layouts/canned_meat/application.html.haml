@@ -10,5 +10,19 @@
     = stylesheet_link_tag 'canned_meat/application', media: 'all'
   %body
     .container
+      %nav.navbar.navbar-inverse
+        .container-fluid
+          .navbar-header
+            %button.navbar-toggle.collapsed{data: {target: "#navbar-collapse-1", toggle: "collapse"}, type: "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to t('canned_meat.views.navigation.canned_meat'), canned_meat.root_path, class: 'navbar-brand'
+          #navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li= link_to t('canned_meat.views.navigation.campaigns'), canned_meat.campaigns_path
+              %li= link_to t('canned_meat.views.navigation.lists'), canned_meat.lists_path
+              %li= link_to t('canned_meat.views.navigation.templates'), canned_meat.templates_path
       = yield
     = javascript_include_tag 'canned_meat/application'

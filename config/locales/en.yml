@@ -23,6 +23,11 @@ en:
           show: "Show"
           edit: "Edit"
           destroy: "Delete"
+      navigation:
+        canned_meat: "Canned Meat"
+        campaigns: "Campaigns"
+        lists: "Lists"
+        templates: "Templates"
       campaigns:
         status:
           draft: "Draft"
@@ -30,6 +35,7 @@ en:
           sent: "Sent"
         index:
           headline: "Campaigns"
+          new: "New Campaign"
         new:
           headline: "New Campaign"
         edit:
@@ -43,6 +49,7 @@ en:
       lists:
         index:
           headline: "Lists"
+          new: "New List"
         new:
           headline: "New List"
         edit:
@@ -50,6 +57,7 @@ en:
       templates:
         index:
           headline: "Templates"
+          new: "New Template"
         new:
           headline: "New Template"
         edit:

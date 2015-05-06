@@ -1,17 +1,17 @@
 = form_for @campaign do |f|
   .form-group
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name, class: 'form-control'
   .form-group
     = f.label :list_id
-    = f.collection_select :list_id, CannedMeat::List.order(name: :asc), :id, :name
+    = f.collection_select :list_id, CannedMeat::List.order(name: :asc), :id, :name, {}, class: 'form-control'
   .form-group
     = f.label :template_id
-    = f.collection_select :template_id, CannedMeat::Template.order(name: :asc), :id, :name
+    = f.collection_select :template_id, CannedMeat::Template.order(name: :asc), :id, :name, {}, class: 'form-control'
   .form-group
     = f.label :subject
-    = f.text_field :subject
+    = f.text_field :subject, class: 'form-control'
   .form-group
     = f.label :body
-    = f.text_area :body, rows: 25
-  = f.submit
+    = f.text_area :body, rows: 25, class: 'form-control'
+  = f.submit class: 'btn btn-primary'

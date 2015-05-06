@@ -2,7 +2,7 @@
   .col-md-8
     %h2
       = @campaign.name
-      %small=t "views.campaigns.status.#{@campaign.status}"
+      %small=t "canned_meat.views.campaigns.status.#{@campaign.status}"
     %p
       %b= CannedMeat::Campaign.human_attribute_name(:list_id)
       = link_to @campaign.list.name, @campaign.list
@@ -18,8 +18,9 @@
   .col-md-4
     - if @campaign.draft?
       = form_tag canned_meat.send_test_mail_campaign_path(@campaign) do
-        .form-control
+        .form-group
           = label_tag :subscriber_id, t('canned_meat.views.campaigns.show.labels.subscriber_id')
-          = select_tag :subscriber_id, options_from_collection_for_select(@campaign.list.subscribers, :id, CannedMeat.label_method)
-        = submit_tag t('canned_meat.views.campaigns.show.buttons.send_test_mail'), class: 'btn btn-defaul'
-      = link_to t('canned_meat.views.campaigns.show.buttons.send'), canned_meat.send_campaign_path(@campaign), method: :patch, class: 'btn btn-primary'
+          = select_tag :subscriber_id, options_from_collection_for_select(@campaign.list.subscribers, :id, CannedMeat.label_method), class: 'form-control'
+        = submit_tag t('canned_meat.views.campaigns.show.buttons.send_test_mail'), class: 'btn btn-default'
+      %p
+        = link_to t('canned_meat.views.campaigns.show.buttons.send'), canned_meat.send_campaign_path(@campaign), method: :patch, class: 'btn btn-primary'
