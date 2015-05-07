@@ -74,7 +74,7 @@ module CannedMeat
 
             before(:example) do
               ActionMailer::Base.deliveries.clear
-              select recipient.name, from: 'subscriber_id'
+              select recipient.name, from: 'subscription_id'
               click_button(button_text)
             end
 

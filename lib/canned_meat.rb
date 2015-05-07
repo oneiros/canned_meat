@@ -1,8 +1,8 @@
+require "canned_meat/engine"
 require "canned_meat/redcarpet/text_renderer"
 require "canned_meat/variable_replacer"
 require "canned_meat/template_renderer"
 require "canned_meat/campaign_sender"
-require "canned_meat/engine"
 require "canned_meat/version"
 
 module CannedMeat

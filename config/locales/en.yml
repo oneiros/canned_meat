@@ -42,7 +42,7 @@ en:
           headline: "Edit Campaign"
         show:
           labels:
-            subscriber_id: "Choose the recipient of the test email:"
+            subscription_id: "Choose the recipient of the test email:"
           buttons:
             send: "Send Campaign"
             send_test_mail: "Send Test Email"
@@ -62,3 +62,8 @@ en:
           headline: "New Template"
         edit:
           headline: "Edit Template"
+      subscriptions:
+        title: "Subscription management"
+        unsubscribe:
+          headline: "You have successfully unsubscribed"
+          explanation: "You have successfully been unsubscribed from the list '%{list_name}'. You will receive no further emails from this list."

@@ -19,8 +19,8 @@
     - if @campaign.draft?
       = form_tag canned_meat.send_test_mail_campaign_path(@campaign) do
         .form-group
-          = label_tag :subscriber_id, t('canned_meat.views.campaigns.show.labels.subscriber_id')
-          = select_tag :subscriber_id, options_from_collection_for_select(@campaign.list.subscribers, :id, CannedMeat.label_method), class: 'form-control'
+          = label_tag :subscription_id, t('canned_meat.views.campaigns.show.labels.subscription_id')
+          = select_tag :subscription_id, options_from_collection_for_select(@campaign.list.subscriptions.subscribed, :id, :subscriber_name), class: 'form-control'
         = submit_tag t('canned_meat.views.campaigns.show.buttons.send_test_mail'), class: 'btn btn-default'
       %p
         = link_to t('canned_meat.views.campaigns.show.buttons.send'), canned_meat.send_campaign_path(@campaign), method: :patch, class: 'btn btn-primary'

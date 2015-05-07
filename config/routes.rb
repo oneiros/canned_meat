@@ -11,5 +11,7 @@ CannedMeat::Engine.routes.draw do
 
   resources :templates
 
+  get '/u/:unsubscribe_token', to: 'subscriptions#unsubscribe', as: 'unsubscribe'
+
   root to: 'dashboard#index'
 end
