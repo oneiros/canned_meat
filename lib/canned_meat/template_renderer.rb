@@ -8,14 +8,14 @@ module CannedMeat
 
     def render_html
       html = render_markdown(::Redcarpet::Render::HTML)
-      VariableReplacer.new(@template.html)
-        .replace content: html
+      VariableReplacer.new(content: html)
+        .replace @template.html
     end
 
     def render_text
       text = render_markdown(Redcarpet::TextRenderer)
-      VariableReplacer.new(@template.text)
-        .replace content: text
+      VariableReplacer.new(content: text)
+        .replace @template.text
     end
 
     private

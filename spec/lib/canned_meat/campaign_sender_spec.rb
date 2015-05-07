@@ -82,10 +82,9 @@ module CannedMeat
         end
 
         it "should set all all variables for replacement" do
-          template_replacer = double(:template_replacer, replace: "")
           replacer = double(:variable_replacer, replace: "")
           allow(VariableReplacer).to receive(:new)
-            .and_return(template_replacer, template_replacer, replacer)
+            .and_return(replacer)
           ActionMailer::Base.default_url_options = {
             host: 'example.com',
             port: 3000,
@@ -93,7 +92,7 @@ module CannedMeat
           }
           CampaignSender.new(campaign).send_to(subscription)
 
-          expect(replacer).to have_received(:replace).with(
+          expect(VariableReplacer).to have_received(:new).with(
             {
               unsubscribe_url: unsubscribe_url(
                 subscription.unsubscribe_token,
@@ -103,7 +102,7 @@ module CannedMeat
               )
             },
             subscriber: user
-          ).twice
+          )
         end
       end
     end

@@ -13,17 +13,14 @@ module CannedMeat
     end
 
     def send_to(subscription)
-      subscriber = subscription.subscriber
-      html = VariableReplacer.new(@html_template).replace(
+      replacer = VariableReplacer.new(
         variables_for_replacement(subscription),
-        subscriber: subscriber
+        subscriber: subscription.subscriber
       )
-      text = VariableReplacer.new(@text_template).replace(
-        variables_for_replacement(subscription),
-        subscriber: subscriber
-      )
+      html = replacer.replace(@html_template)
+      text = replacer.replace(@text_template)
       CampaignMailer.send_campaign(
-        subscriber.send(CannedMeat.email_method),
+        subscription.subscriber_email,
         @campaign.subject,
         html,
         text
