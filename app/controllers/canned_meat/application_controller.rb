@@ -5,7 +5,7 @@ module CannedMeat
     private
 
     def authenticate_user!
-      if CannedMeat.authenticator and !CannedMeat.authenticator.call
+      if CannedMeat.authenticator and !instance_exec(nil, &CannedMeat.authenticator)
         render text: "access denied", status: 403
       end
     end
