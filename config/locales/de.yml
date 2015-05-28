@@ -1,0 +1,69 @@
+de:
+  canned_meat:
+    controllers:
+      campaigns:
+        created: "Kampagne wurde erfolgreich erstellt."
+        updated: "Kampagne wurde erfolgreich gespeichert."
+        destroyed: "Kampagne wurde erfolgreich gelöscht."
+        sending: "Kampagne wird rausgeschickt."
+        sent_test_mail: "Eine Testmail wurde an '%{email}' verschickt."
+      lists:
+        created: "Liste wurde erfolgreich erstellt."
+        updated: "Liste wurde erfolgreich gespeichert."
+        destroyed: "Liste wurde erfolgreich gelöscht."
+      templates:
+        created: "Template wurde erfolgreich erstellt."
+        updated: "Template wurde erfolgreich gespeichert."
+        destroyed: "Template wurde erfolgreich gelöscht."
+    views:
+      defaults:
+        actions: "Aktionen"
+        confirmation: "Bist Du sicher?"
+        buttons:
+          show: "Anzeigen"
+          edit: "Bearbeiten"
+          destroy: "Löschen"
+      navigation:
+        canned_meat: "Canned Meat"
+        campaigns: "Kampagnen"
+        lists: "Listen"
+        templates: "Templates"
+      campaigns:
+        status:
+          draft: "Entwurf"
+          sending: "Wird verschickt"
+          sent: "Fertig verschickt"
+        index:
+          headline: "Kampagnen"
+          new: "Neue Kampagne"
+        new:
+          headline: "Neue Kampagne"
+        edit:
+          headline: "Kampagne bearbeiten"
+        show:
+          labels:
+            subscription_id: "Wähle den Empfänger der Testmail:"
+          buttons:
+            send: "Kampagne rausschicken"
+            send_test_mail: "Testmail verschicken"
+      lists:
+        index:
+          headline: "Listen"
+          new: "Neue List"
+        new:
+          headline: "Neue Liste"
+        edit:
+          headline: "Liste bearbeiten"
+      templates:
+        index:
+          headline: "Templates"
+          new: "Neues Template"
+        new:
+          headline: "Neues Template"
+        edit:
+          headline: "Template bearbeiten"
+      subscriptions:
+        title: "Abos verwalten"
+        unsubscribe:
+          headline: "Du hast Dich erfolgreich abgemeldet"
+          explanation: "Du hast Dich erfolgreich von der Liste '%{list_name}' abgemeldet. Du wirst keine weiteren E-Mails von dieser Liste erhalten."
