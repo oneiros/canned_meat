@@ -17,6 +17,8 @@
       %pre= @campaign.body
   .col-md-4
     - if @campaign.draft?
+      %p
+        = link_to t('canned_meat.views.defaults.buttons.edit'), canned_meat.edit_campaign_path(@campaign)
       = form_tag canned_meat.send_test_mail_campaign_path(@campaign) do
         .form-group
           = label_tag :subscription_id, t('canned_meat.views.campaigns.show.labels.subscription_id')
