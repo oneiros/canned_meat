@@ -39,7 +39,7 @@ module CannedMeat
                     else
                       '~'
                     end
-        text << "\n#{character * text.size}\n"
+        text << "\n#{character * text.size}\n\n"
         text
       end
 
@@ -49,7 +49,7 @@ module CannedMeat
 
       def list(content, type)
         @list_item_count = 0 if type == :ordered
-        content
+        "#{content}\n"
       end
 
       def list_item(text, type)

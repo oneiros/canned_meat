@@ -68,7 +68,7 @@ module CannedMeat
           it "underlindes the heading with '#{character}' characters" do
             result = subject.header("this is a header", level)
 
-            expect(result).to eq ("this is a header\n#{character * 16}\n")
+            expect(result).to eq ("this is a header\n#{character * 16}\n\n")
           end
         end
 
@@ -94,11 +94,11 @@ module CannedMeat
       end
 
       describe "#list" do
-        it "simply returns the list unchanged" do
+        it "adds a newline but otherwise leaves the list unchanged" do
           [:ordered, :unordered].each do |type|
             result = subject.list("test", type)
 
-            expect(result).to eq "test"
+            expect(result).to eq "test\n"
           end
         end
 
