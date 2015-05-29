@@ -6,7 +6,7 @@ module CannedMeat
       let(:mail) do
         CampaignMailer.send_campaign(
           "test@example.com",
-          "Send campaign",
+          "test subject",
           "<html>content</html>",
           "content"
         )
@@ -21,7 +21,7 @@ module CannedMeat
       end
 
       it "uses subject from args" do
-        expect(mail.subject).to eq("Send campaign")
+        expect(mail.subject).to eq("test subject")
       end
 
       it "uses the html content from args" do
