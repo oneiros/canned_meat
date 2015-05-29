@@ -49,11 +49,15 @@ de:
       lists:
         index:
           headline: "Listen"
-          new: "Neue List"
+          new: "Neue Liste"
         new:
           headline: "Neue Liste"
         edit:
           headline: "Liste bearbeiten"
+        show:
+          subscriber_count: "Diese Liste hat %{count} Abonnent(en)."
+          name: "Name"
+          email: "E-Mail"
       templates:
         index:
           headline: "Templates"

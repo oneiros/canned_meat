@@ -1,3 +1,16 @@
 .row
   .col-md-12
     %h2= @list.name
+
+    %p=t 'canned_meat.views.lists.show.subscriber_count', count: @list.subscribers.count
+
+    %table
+      %thead
+        %tr
+          %th=t 'canned_meat.views.lists.show.name'
+          %th=t 'canned_meat.views.lists.show.email'
+      %tbody
+        - @list.subscribers.each do |subscriber|
+          %tr
+            %td= subscriber.send(CannedMeat.label_method)
+            %td= subscriber.send(CannedMeat.email_method)

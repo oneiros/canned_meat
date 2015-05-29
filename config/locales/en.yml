@@ -54,6 +54,10 @@ en:
           headline: "New List"
         edit:
           headline: "Edit List"
+        show:
+          subscriber_count: "This list has %{count} subscriber(s)."
+          name: "Name"
+          email: "Email"
       templates:
         index:
           headline: "Templates"
