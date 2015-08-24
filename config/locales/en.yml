@@ -46,6 +46,7 @@ en:
           buttons:
             send: "Send Campaign"
             send_test_mail: "Send Test Email"
+          send_confirmation: "This will send emails to %{recipient_count} recipients. Are you sure?"
       lists:
         index:
           headline: "Lists"

@@ -46,6 +46,7 @@ de:
           buttons:
             send: "Kampagne rausschicken"
             send_test_mail: "Testmail verschicken"
+          send_confirmation: "Es werden E-Mails an %{recipient_count} Empfänger verschickt. Bist Du sicher?"
       lists:
         index:
           headline: "Listen"

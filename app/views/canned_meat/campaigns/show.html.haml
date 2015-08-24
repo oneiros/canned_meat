@@ -25,4 +25,4 @@
           = select_tag :subscription_id, options_from_collection_for_select(@campaign.list.subscriptions.subscribed, :id, :subscriber_name), class: 'form-control'
         = submit_tag t('canned_meat.views.campaigns.show.buttons.send_test_mail'), class: 'btn btn-default'
       %p
-        = link_to t('canned_meat.views.campaigns.show.buttons.send'), canned_meat.send_campaign_path(@campaign), method: :patch, class: 'btn btn-primary'
+        = link_to t('canned_meat.views.campaigns.show.buttons.send'), canned_meat.send_campaign_path(@campaign), method: :patch, class: 'btn btn-primary', data: {confirm: t('canned_meat.views.campaigns.show.send_confirmation', recipient_count: @campaign.subscriptions.subscribed.count)}
