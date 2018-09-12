@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = CannedMeat::VERSION
   s.authors     = ["David Roetzel"]
   s.email       = ["david@roetzel.de"]
-  s.homepage    = "none yet"
+  s.homepage    = "https://github.com/oneiros/canned_meat"
   s.summary     = "Summary of CannedMeat."
   s.description = "Description of CannedMeat."
   s.license     = "MIT"
