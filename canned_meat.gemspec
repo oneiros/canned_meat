@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = CannedMeat::VERSION
   s.authors     = ["David Roetzel"]
   s.email       = ["david@roetzel.de"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of CannedMeat."
-  s.description = "TODO: Description of CannedMeat."
+  s.homepage    = "none yet"
+  s.summary     = "Summary of CannedMeat."
+  s.description = "Description of CannedMeat."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
